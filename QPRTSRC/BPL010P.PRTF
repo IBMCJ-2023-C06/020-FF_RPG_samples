@@ -1,0 +1,37 @@
+     A*****************************************************************
+     A**         品目マスター一覧表　　　                          **
+     A**          PRINTER FILE(NAME---BPL010P)                       **
+     A*****************************************************************
+     A          R PHEAD1
+     A                                      SKIPB(02)
+     A                                     2'BPL010'
+     A                                    20'＊＊　品目マスター一覧表　＊＊'
+     A                                    82'日付:'
+     A                                    90DATE EDTCDE(Y)
+     A                                   100'PAGE :'
+     A                                   107PAGNBR EDTCDE(Z)
+     A                                      SPACEA(02)
+     A                                     3'品目番号'
+     A                                    16'品　名ー漢字'
+     A                                    41'品　名ーカナ'
+     A                                    66'定価'
+     A                                    77'原価'
+     A                                    88'当月'
+     A                                   102'当月'
+     A                                      SPACEA(01)
+     A                                    88'売上数量'
+     A                                   102'売上金額'
+     A                                      SPACEA(02)
+     A          R PITEM1
+     A                                      SPACEA(02)
+     A            PI1HNBANG      5A        4TEXT('品目番号')
+     A            PI1HNNAKJ     20O       17TEXT('品目名（漢字）')
+     A            PI1HNNAKN     20A       42TEXT('品目名（カナ）')
+     A            PI1HNTEIK      5S 0     65TEXT('定価')
+     A                                      EDTCDE(1)
+     A            PI1HNGENK      5S 0     76TEXT('原価')
+     A                                      EDTCDE(1)
+     A            PI1HNGSUR      5S 0     91TEXT('当月売上数量')
+     A                                      EDTCDE(1)
+     A            PI1HNGKIN      7S 0    102TEXT('当月売上高')
+     A                                      EDTCDE(J)

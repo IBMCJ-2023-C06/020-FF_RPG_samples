@@ -1,0 +1,44 @@
+     A*****************************************************************
+     A**         受注一覧表　　　                                  **
+     A**          PRINTER FILE(NAME---BPL030P)                       **
+     A*****************************************************************
+     A          R PHEAD1
+     A                                      SKIPB(02)
+     A                                     2'BPL030'
+     A                                    30'＊＊地区別受注一覧表＊＊'
+     A                                    82'日付:'
+     A                                    90DATE EDTCDE(Y)
+     A                                   100'PAGE :'
+     A                                   107PAGNBR EDTCDE(Z)
+     A                                      SKIPA(04)
+     A                                     4'地区コード:'
+     A            PH1JHTIKU      2A       18TEXT('地区コード')
+     A                                    21'地区名:'
+     A            PH1TIKNAM      8O       31TEXT('地区名')
+     A                                     4'得意先番号'
+     A                                      SKIPB(06)
+     A                                    18'得意先名'
+     A                                    40'レコード数'
+     A                                    59'受注金額'
+     A                                    77'平均金額'
+     A                                      SPACEA(03)
+     A*
+     A          R PTOTAL1
+     A                                      SPACEA(02)
+     A            PT1JHTOKB      5A        5TEXT('得意先番号')
+     A            PT1TKNAKJ     20O       19TEXT('得意先漢字')
+     A            PT1_REC        4S 0     46TEXT('レコード数')
+     A                                      EDTCDE(1)
+     A            PT1_KING       9S 0     57TEXT('受注金額')
+     A                                      EDTCDE(J)
+     A            PT1_AVR        7S 0     77TEXT('平均金額')
+     A                                      EDTCDE(J)
+     A*
+     A          R PTOTAL2                   SPACEA(00)
+     A                                     4'＊地区計＊'
+     A            PT2_REC        5S 0     45TEXT('レコード件数')
+     A                                      EDTCDE(1)
+     A            PT2_KING      10S 0     55TEXT('受注金額')
+     A                                      EDTCDE(J)
+     A            PT2_AVR        7S 0     77TEXT('平均金額')
+     A                                      EDTCDE(J)
