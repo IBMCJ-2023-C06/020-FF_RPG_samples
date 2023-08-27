@@ -28,7 +28,7 @@
 CTL-OPT
        DATEDIT(*YMD)
        DECEDIT('0.')
-       COPYRIGHT('COPYRIGHT(C) CHUBU SYSTEM CO.,LTD. ALL RIGHTS RESERVED')
+       COPYRIGHT('...')
 ;
 //-------------------------------------------------------------------------
 //変数宣言はメイン・ルーチンより前で行う必要がある

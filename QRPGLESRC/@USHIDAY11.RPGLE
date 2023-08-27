@@ -25,7 +25,7 @@
 CTL-OPT
        DATEDIT(*YMD)
        DECEDIT('0.')
-       COPYRIGHT('COPYRIGHT(C) CHUBU SYSTEM CO.,LTD. ALL RIGHTS RESERVED')
+       COPYRIGHT('...')
 ;
 //   D*-********************************************************************
 //   D*-* 変数定義                                                      **
