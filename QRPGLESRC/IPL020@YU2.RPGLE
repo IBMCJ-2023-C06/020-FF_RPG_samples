@@ -119,7 +119,7 @@ BEGSR @HED                                  ;
 
      //１件も存在しない
      IF  #RRN01 <= *ZERO               ;
-       EVAL ERR90  = *ON        ;
+       ERR90  = *ON        ;
        LEAVESR                                         ;
      ENDIF                                  ;
 
@@ -131,13 +131,13 @@ ENDSR                                       ;
 //   C*-***************************************************************
 BEGSR @CHKH                                 ;
 
-      EVAL ERR90  = *OFF       ;
+      ERR90  = *OFF       ;
 
       //品目マスタ参照
       HINMSKEY1.HNNAKN       = X1NAKN        ;      //品目番号
       SETLL %KDS(HINMSKEY1   ) HINMSR        ;
       IF NOT %FOUND            ;
-        EVAL ERR90  = *ON        ;
+        ERR90  = *ON        ;
       ENDIF                    ;
 
 ENDSR                                       ;
@@ -147,20 +147,20 @@ ENDSR                                       ;
 BEGSR @SETD                                 ;
 
   //ＳＦＬクリアー
-     EVAL SFLCLR = *ON                               ;
-     EVAL SFLDSP = *OFF                              ;
+     SFLCLR = *ON                               ;
+     SFLDSP = *OFF                              ;
      WRITE CTL01                                     ;
-     EVAL SFLCLR = *OFF                              ;
-     EVAL SFLDSP = *ON                               ;
+     SFLCLR = *OFF                              ;
+     SFLDSP = *ON                               ;
 
   //レコード読み取り
      #RRN01      =  *ZERO                            ; //ＳＦＬ相対レコード番号
-     EVAL SFLEND = *OFF                              ;
+     SFLEND = *OFF                              ;
      DOW  1 = 1                             ;
 
        READ HINMSR                          ;
        IF %EOF                              ;
-         EVAL SFLEND = *ON                               ;
+         SFLEND = *ON                               ;
          LEAVE                                ;
        ENDIF                                  ;
 

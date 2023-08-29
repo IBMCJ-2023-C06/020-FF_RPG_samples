@@ -100,7 +100,7 @@ BEGSR @HED                                  ;
 
      WRITE PANEL03                                   ;
      EXFMT PANEL01                                   ;
-     EVAL ERR61  = *OFF       ;
+     ERR61  = *OFF       ;
 
      IF  F03   = *ON                   ;
        W#CTL   = 'END'                                 ;    //画面制御
@@ -143,7 +143,7 @@ BEGSR @UP                                   ;
       IF NOT %EOF         ;
         IX1BANG  = HNBANG      ;
       ELSE                     ;
-        EVAL ERR61  = *ON        ;
+        ERR61  = *ON        ;
       ENDIF                    ;
 
 ENDSR                                       ;
@@ -159,7 +159,7 @@ BEGSR @DOWN                                 ;
       IF NOT %EOF         ;
         IX1BANG  = HNBANG      ;
       ELSE                     ;
-        EVAL ERR61  = *ON        ;
+        ERR61  = *ON        ;
       ENDIF                    ;
 
 ENDSR                                       ;
@@ -169,11 +169,11 @@ ENDSR                                       ;
 BEGSR @CHKH                                 ;
 
       //品目マスタ参照
-      EVAL ERR60  = *OFF       ;
+      ERR60  = *OFF       ;
       HINMSKEY1.HNBANG       = IX1BANG       ;      //品目番号
       CHAIN %KDS(HINMSKEY1   ) HINMSR        ;
       IF NOT %FOUND            ;
-        EVAL ERR60  = *ON        ;
+         ERR60  = *ON        ;
       ENDIF                    ;
 
 ENDSR                                       ;
@@ -199,7 +199,7 @@ BEGSR @DTL                                  ;
      WRITE PANEL03                                   ;
      WRITE PANEL01                                   ;
      EXFMT PANEL02                                   ;
-     EVAL ERR61  = *OFF       ;
+     ERR61  = *OFF       ;
 
      IF  F03   = *ON                   ;
        W#CTL   = 'END'                                 ;    //画面制御
